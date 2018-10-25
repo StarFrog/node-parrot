@@ -9,6 +9,7 @@ const DEFAULTS = [
   "collector",
   "web",
   "info",
+  "request",
 ];
 
 module.exports = async function(handler, options) {

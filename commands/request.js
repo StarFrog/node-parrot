@@ -15,6 +15,12 @@ class Request extends ChatCommand {
     if (!room.allowed(msg) || !remainder) {
       return false;
     }
+
+    if (!msg.purple && !msg.greenmasterrace) {
+      room.chat(`${msg.nick}: Greys just don't make requests!`);
+      return true;
+    }
+
     if (!msg.purple && cooldown.has(msg.lnick)) {
       room.chat(`${msg.nick}: calm your tits!`);
       return true;
