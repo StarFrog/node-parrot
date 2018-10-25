@@ -6,7 +6,7 @@ const {LRU} = require.main.require("./parrot/utils");
 
 class BLACKED extends ChatCommand {
   get handlers() {
-    return ["!niggers", "!obamas", "!BLACKED"];
+    return ["!niggers", "!obamas", "!BLACKED", "!gods"];
   }
 
   handle_BLACKED(...args) {
@@ -17,7 +17,7 @@ class BLACKED extends ChatCommand {
     if (!room.allowed(msg)) {
       return true;
     }
-    room.chatNick(msg, remainder, `The following black gentleman cannot use this bot:\n${this.options.blacked.join(", ")}`);
+    room.chatNick(msg, remainder, `The following black gentlemen cannot use this bot at all:\n${this.options.blacked.join(", ")}`);
     return true;
   }
 
@@ -25,7 +25,15 @@ class BLACKED extends ChatCommand {
     if (!room.allowed(msg)) {
       return true;
     }
-    room.chatNick(msg, remainder, `The following mixed gentleman use this bot not that often:\n${this.options.obamas.join(", ")}`);
+    room.chatNick(msg, remainder, `The following mixed gentlemen use this bot not that often:\n${this.options.obamas.join(", ")}`);
+    return true;
+  }
+
+  handle_gods(room, remainder, msg) {
+    if (!room.allowed(msg)) {
+      return true;
+    }
+    room.chatNick(msg, remainder, `The following holy gentlemen can use this bot whenever they want:\n${this.options.admins.join(", ")}`);
     return true;
   }
 }
