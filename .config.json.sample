@@ -1,15 +1,18 @@
 {
+  "loglevel": "info",
+  "locale": "fr-FR",
   "nick": "Parrot",
+  "passwd": "your parrot account password",
   "blacked": ["MercWMouth", "Deadpool", "bot"],
   "obamas": ["Counselor", "Briseis", "Brisis", "GuppyLord"],
   "commands": [
     "defaults",
-    {"cmd": "ripperoni", "options": { "rippers": ["kek"] } }
+    {"cmd": "ripperoni", "options": { "rippers": ["person1", "person2"] } }
   ],
   "rooms": [
     {
-      "room": "https://volafile.org/r/e52h2jb4",
-      "password": "kek"
+      "room": "your room full url",
+      "password": "your room password"
     }
   ]
 }
