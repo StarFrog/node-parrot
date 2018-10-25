@@ -384,8 +384,8 @@ class Runner extends ManyRooms {
       return;
     }
 
-    if (this.config.blacked.some(e => msg.lnick.includes(e)) &&
-      msg.lnick !== "modchatbot") {
+    //Blacked people don't get to use the parrot
+    if (this.config.blacked.some(e => msg.lnick.includes(e))) {
       console.info("Ignored message from BLACKED", msg.nick);
       return;
     }
@@ -396,7 +396,9 @@ class Runner extends ManyRooms {
       }
       this.obamas.set(msg.lnick);
     }
-    if (!msg.purple && this.cooling.get(this.idFromMsg(msg)) >= 3) {
+
+    //greens get cooling except the room owner/admin/janitors...
+    if (!msg.purple && this.cooling.get(this.idFromMsg(msg)) >= 3 && !this.config.admins.some(e => msg.lnick.includes(e))) {
       console.info("Ignored message from cooling", msg.nick);
       return;
     }
