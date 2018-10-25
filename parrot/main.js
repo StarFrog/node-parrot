@@ -263,7 +263,7 @@ class BotRoom extends Room {
 class Runner extends ManyRooms {
   constructor(config) {
     config = Object.assign({active: true}, config, {
-      admins: Array.from(new Set(toLower(config.admins || ["RealDolos"]))),
+      admins: Array.from(new Set(toLower(config.admins || []))),
       blacked: Array.from(new Set(toLower(config.blacked || []))),
       obamas: Array.from(new Set(toLower(config.obamas || []))),
     });
@@ -462,4 +462,3 @@ class Runner extends ManyRooms {
 }
 
 module.exports = { Runner };
-
