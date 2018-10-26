@@ -9,12 +9,12 @@ const DEFAULTS = [
   "collector",
   "web",
   "info",
-  "request",
 ];
 
 module.exports = async function(handler, options) {
   console.debug(options);
   for (const d of DEFAULTS) {
+    console.debug(`Loading ${d}...`);
     await require(`./${d}`)(handler, options);
   }
 };
