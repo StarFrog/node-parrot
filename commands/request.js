@@ -6,6 +6,7 @@ const {Cooldown} = require.main.require("./parrot/utils");
 const cooldown = new Cooldown(20 * 60 * 1000, 100);
 
 class Request extends ChatCommand {
+
   get handlers() {
     return "!request";
   }
@@ -16,7 +17,7 @@ class Request extends ChatCommand {
       return false;
     }
 
-    if (!msg.purple && !msg.greenmasterrace) {
+    if (!msg.purple && !msg.green) {
       room.chat(`${msg.nick}: Greys just don't make requests!`);
       return true;
     }
