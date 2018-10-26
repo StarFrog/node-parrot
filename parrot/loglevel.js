@@ -259,8 +259,8 @@ function patch(console, options) {
       if (lvl > clevel) {
         return false;
       }
-      
-      const date = new Date().toLocaleString('fr-FR');
+
+      const date = new Date().toLocaleTimeString();
       const fmtDate = `[${colors ? date.bold.blue : date}]`;
       const fmtArgs = args.map(toLogMessage);
       try {

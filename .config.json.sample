@@ -1,6 +1,5 @@
 {
   "loglevel": "info",
-  "locale": "fr-FR",
   "nick": "Parrot",
   "passwd": "your parrot account password",
   "blacked": ["MercWMouth", "Deadpool", "bot"],
