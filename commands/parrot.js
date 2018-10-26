@@ -91,7 +91,7 @@ class ParrotCommands extends ChatCommand {
         room.isAdmin(msg) ? 1 : 0,
         msg.nick
       );
-      room.chat("KUK");
+      room.chat("new phrase defined");
       this.present.clear();
     }
     catch (ex) {
@@ -107,7 +107,7 @@ class ParrotCommands extends ChatCommand {
     }
     const [lookup] = remainder.split(/\s+(.*)$/);
     if (!lookup) {
-      room.post(`${msg.nick}: Your dick is too small!`);
+      room.chat(`${msg.nick}: Your dick is too small!`);
       return true;
     }
     try {
@@ -134,7 +134,7 @@ class ParrotCommands extends ChatCommand {
         lock,
         lookup.toLowerCase()
       );
-      room.chat("KUK");
+      room.chat("phrase "+lookup+" lock toggled");
     }
     catch (ex) {
       console.error("Failed to change lock:", remainder, ex);
@@ -161,7 +161,7 @@ class ParrotCommands extends ChatCommand {
         "DELETE FROM phrases WHERE phrase = ?",
         lookup.toLowerCase()
       );
-      room.chat("KUK");
+      room.chat("phrase undefined");
       this.present.clear();
     }
     catch (ex) {
